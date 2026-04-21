@@ -43,7 +43,9 @@ The project successfully analyzes fuel consumption patterns using Python. It hig
 ________________________________________
 ✅ Conclusion
 Fuel consumption is strongly influenced by engine characteristics and vehicle design. By leveraging Python-based data analysis, organizations can improve fuel efficiency, reduce environmental impact, and make data-driven decisions for better performance and sustainability.
+
 Author
+
 AISHWARYA.K AI-Driven || Data Analyst || BI Developer || Business Intelligence || Power BI ||Tableau || Application Support ||Global Service Desk|| SQL || Python ||LEAN Six Sigma || ITIL || Java Script || HTML || Full Stack Developer ||AGILE ||Advanced Excel ||Ticketing tools-HP/ICARE/ITIL||ITIL Certification ||
 
 
