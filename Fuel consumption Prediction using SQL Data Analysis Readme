@@ -1,0 +1,78 @@
+1. Sample Table Structure
+Assume your table is:
+CREATE TABLE fuel_data (
+    vehicle_id INT,
+    vehicle_type VARCHAR(50),
+    fuel_type VARCHAR(20),
+    distance_km FLOAT,
+    fuel_used_liters FLOAT,
+    date DATE
+);
+________________________________________
+🔹 2. Calculate Fuel Efficiency (km per liter)
+SELECT 
+    vehicle_id,
+    distance_km / fuel_used_liters AS fuel_efficiency
+FROM fuel_data;
+________________________________________
+🔹 3. Average Fuel Consumption per Vehicle
+SELECT 
+    vehicle_id,
+    AVG(fuel_used_liters) AS avg_fuel_used
+FROM fuel_data
+GROUP BY vehicle_id;
+________________________________________
+🔹 4. Total Fuel Consumption
+SELECT 
+    SUM(fuel_used_liters) AS total_fuel_consumption
+FROM fuel_data;
+________________________________________
+
+
+🔹 5. Fuel Consumption by Vehicle Type
+SELECT 
+    vehicle_type,
+    SUM(fuel_used_liters) AS total_fuel
+FROM fuel_data
+GROUP BY vehicle_type;
+________________________________________
+🔹 6. Most Fuel-Efficient Vehicle
+SELECT 
+    vehicle_id,
+    AVG(distance_km / fuel_used_liters) AS avg_efficiency
+FROM fuel_data
+GROUP BY vehicle_id
+ORDER BY avg_efficiency DESC
+LIMIT 1;
+________________________________________
+🔹 7. Monthly Fuel Consumption
+SELECT 
+    MONTH(date) AS month,
+    SUM(fuel_used_liters) AS total_fuel
+FROM fuel_data
+GROUP BY MONTH(date)
+ORDER BY month;
+________________________________________
+🔹 8. Fuel Consumption by Fuel Type
+SELECT 
+    fuel_type,
+    AVG(distance_km / fuel_used_liters) AS avg_efficiency
+FROM fuel_data
+GROUP BY fuel_type;
+________________________________________
+
+🔹 9. Identify High Fuel Consumption Records
+SELECT *
+FROM fuel_data
+WHERE fuel_used_liters > 50;
+________________________________________
+🔹 10. Total Distance Covered
+SELECT 
+    SUM(distance_km) AS total_distance
+FROM fuel_data;
+________________________________________
+🔹11.Bonus: Create a New Column (Efficiency View)
+SELECT *,
+       (distance_km / fuel_used_liters) AS efficiency
+FROM fuel_data;
+
